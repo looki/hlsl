@@ -1,39 +1,82 @@
 { "name": "HLSL",
-  "scopeName": "source.hlsl", 
-  "fileTypes": ["hlsl", "fx"], 
+  "scopeName": "source.hlsl",
+  "fileTypes": ["hlsl", "fx"],
+  "uuid": "f42f5931-4574-438e-a6f8-b406cade4616",
   "patterns": [
-  	{	"match":"\\b((float|float[1234])|(half|half[1234])|(int|int[1234])|(uint|uint[1234])|(double|double[1234])|(bool|bool[1234])|(float[1-4]x[1-4])|(int[1-4]x[1-4])|(half[1-4]x[1-4])|(double[1-4]x[1-4])|([Tt]exture|[Tt]exture(1D|2D|3D|Cube|CUBE))|(sampler|sampler(1D|2D|3D|CUBE))|void)\\b",
-  		"name":"storage.type.hlsl",
-  		"comment":"test"
-  	},
-    { "match":"\\b(unorm|const|static|extern|register)\\b",
-      "name":"storage.modifier.hlsl",
-      "comment":"test2"
-    },
-    { "match":"\\b(break|case|continue|default|do|else|for|goto|if|_Pragma|return|switch|while)\\b",
-      "name":"keyword.control.hlsl",
-      "comment":"test2"
-    },
-    { "match":"\\b(abs|ceil|clamp|cross|degrees|determinant|distance|dot|floor|length|lerp|log|log10|log2|max|min|mul|normalize|pow|radians|reflect|refract|rsqrt|saturate|sin|sincos|sqrt|tan|transpose)\\b",
-      "name":"entity.name.function",
-      "comment":"test2"
-    },
-    { "match":"\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b",
-      "name":"constant.numeric.hlsl",
-      "comment":"test2"
-    },
-    { "match":"\"[^\"]*\"",
-      "name":"string.source.hlsl",
-      "comment":"test2"
-    },
-    { "match":"//.*",
-      "name":"comment.hlsl",
-      "comment":"test2"
-    },
-    { "match":"/\\*.*\\*/",
-      "name":"comment.hlsl",
-      "comment":"test2"
-    }
-  ],
-  "uuid": "f42f5931-4574-438e-a6f8-b406cade4616"
+      {
+          "name": "constant.numeric.hlsl", 
+          "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b"
+      }, 
+      {
+          "name": "string.source.hlsl", 
+          "match": "\"[^\"]*\""
+      }, 
+      {
+          "name": "comment.hlsl", 
+          "match": "//.*"
+      }, 
+      {
+          "name": "comment.hlsl", 
+          "match": "/\\*.*\\*/"
+      }, 
+      {
+          "comment": "Generic data types", 
+          "name": "storage.type.hlsl", 
+          "match": "\\b(Buffer|class|struct|typedef|void)\\b"
+      }, 
+      {
+          "comment": "Scalar, vector and matrix data types", 
+          "name": "storage.type.hlsl", 
+          "match": "\\b(vector|matrix|(bool|double|float|half|int|uint)([1-4](x[1-4])?)?|(min16(float|int|uint))|min10float|min12int)\\b"
+      }, 
+      {
+          "comment": "Texture types", 
+          "name": "storage.type.hlsl", 
+          "match": "\\b(texture|Texture((1D|2D)(Array)?|3D|Cube))\\b"
+      }, 
+      {
+          "comment": "Sampler types", 
+          "name": "storage.type.hlsl", 
+          "match": "\\b(sampler(1D|2D|3D|CUBE|_state)?|SamplerState)\\b"
+      }, 
+      {
+          "comment": "Legacy types", 
+          "name": "storage.type.hlsl", 
+          "match": "\\b(DWORD|FLOAT|VECTOR|MATRIX|STRING|TEXTURE|PIXELSHADER|VERTEXSHADER)\\b"
+      }, 
+      {
+          "comment": "Storage modifierss", 
+          "name": "storage.modifier.hlsl", 
+          "match": "\\b(extern|nointerpolation|precise|shared|groupshared|packoffset|register|snorm|static|uniform|unorm|volatile)\\b"
+      }, 
+      {
+          "comment": "Type modifiers", 
+          "name": "storage.modifier.hlsl", 
+          "match": "\\b(const|row_major|column_major)\\b"
+      }, 
+      {
+          "comment": "Function parameter modifiers", 
+          "name": "storage.modifier.hlsl", 
+          "match": "\\b(in|inout|out)\\b"
+      }, 
+      {
+          "comment": "General flow control keywords", 
+          "name": "keyword.control.hlsl", 
+          "match": "\\b(break|case|continue|default|discard|do|else|for|goto|if|return|switch|while)\\b"
+      }, 
+      {
+          "comment": "Flow control attributes", 
+          "name": "keyword.control.hlsl", 
+          "match": "\\b(flatten|branch|forecase|call)\\b"
+      }, 
+      {
+          "comment": "Loop attributes", 
+          "name": "keyword.control.hlsl", 
+          "match": "\\b(unroll|loop|fastopt|allow_uav_condition)\\b"
+      }, 
+      {
+          "name": "entity.name.function", 
+          "match": "\\b(abs|ceil|clamp|cross|degrees|determinant|distance|dot|floor|length|lerp|log|log10|log2|max|min|mul|normalize|pow|radians|reflect|refract|rsqrt|saturate|sin|sincos|sqrt|tan|transpose)\\b"
+      }
+  ]
 }

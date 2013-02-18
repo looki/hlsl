@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -12,68 +12,122 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>comment</key>
-			<string>test</string>
-			<key>match</key>
-			<string>\b((float|float[1234])|(half|half[1234])|(int|int[1234])|(uint|uint[1234])|(double|double[1234])|(bool|bool[1234])|(float[1-4]x[1-4])|(int[1-4]x[1-4])|(half[1-4]x[1-4])|(double[1-4]x[1-4])|([Tt]exture|[Tt]exture(1D|2D|3D|Cube|CUBE))|(sampler|sampler(1D|2D|3D|CUBE))|void)\b</string>
-			<key>name</key>
-			<string>storage.type.hlsl</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>test2</string>
-			<key>match</key>
-			<string>\b(unorm|const|static|extern|register)\b</string>
-			<key>name</key>
-			<string>storage.modifier.hlsl</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>test2</string>
-			<key>match</key>
-			<string>\b(break|case|continue|default|do|else|for|goto|if|_Pragma|return|switch|while)\b</string>
-			<key>name</key>
-			<string>keyword.control.hlsl</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>test2</string>
-			<key>match</key>
-			<string>\b(abs|ceil|clamp|cross|degrees|determinant|distance|dot|floor|length|lerp|log|log10|log2|max|min|mul|normalize|pow|radians|reflect|refract|rsqrt|saturate|sin|sincos|sqrt|tan|transpose)\b</string>
-			<key>name</key>
-			<string>entity.name.function</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>test2</string>
 			<key>match</key>
 			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
 			<key>name</key>
 			<string>constant.numeric.hlsl</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>test2</string>
 			<key>match</key>
 			<string>"[^"]*"</string>
 			<key>name</key>
 			<string>string.source.hlsl</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>test2</string>
 			<key>match</key>
 			<string>//.*</string>
 			<key>name</key>
 			<string>comment.hlsl</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>test2</string>
 			<key>match</key>
 			<string>/\*.*\*/</string>
 			<key>name</key>
 			<string>comment.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Generic data types</string>
+			<key>match</key>
+			<string>\b(Buffer|class|struct|typedef|void)\b</string>
+			<key>name</key>
+			<string>storage.type.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Scalar, vector and matrix data types</string>
+			<key>match</key>
+			<string>\b(vector|matrix|(bool|double|float|half|int|uint)([1-4](x[1-4])?)?|(min16(float|int|uint))|min10float|min12int)\b</string>
+			<key>name</key>
+			<string>storage.type.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Texture types</string>
+			<key>match</key>
+			<string>\b(texture|Texture((1D|2D)(Array)?|3D|Cube))\b</string>
+			<key>name</key>
+			<string>storage.type.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Sampler types</string>
+			<key>match</key>
+			<string>\b(sampler(1D|2D|3D|CUBE|_state)?|SamplerState)\b</string>
+			<key>name</key>
+			<string>storage.type.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Legacy types</string>
+			<key>match</key>
+			<string>\b(DWORD|FLOAT|VECTOR|MATRIX|STRING|TEXTURE|PIXELSHADER|VERTEXSHADER)\b</string>
+			<key>name</key>
+			<string>storage.type.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Storage modifierss</string>
+			<key>match</key>
+			<string>\b(extern|nointerpolation|precise|shared|groupshared|packoffset|register|snorm|static|uniform|unorm|volatile)\b</string>
+			<key>name</key>
+			<string>storage.modifier.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Type modifiers</string>
+			<key>match</key>
+			<string>\b(const|row_major|column_major)\b</string>
+			<key>name</key>
+			<string>storage.modifier.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Function parameter modifiers</string>
+			<key>match</key>
+			<string>\b(in|inout|out)\b</string>
+			<key>name</key>
+			<string>storage.modifier.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>General flow control keywords</string>
+			<key>match</key>
+			<string>\b(break|case|continue|default|discard|do|else|for|goto|if|return|switch|while)\b</string>
+			<key>name</key>
+			<string>keyword.control.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Flow control attributes</string>
+			<key>match</key>
+			<string>\b(flatten|branch|forecase|call)\b</string>
+			<key>name</key>
+			<string>keyword.control.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Loop attributes</string>
+			<key>match</key>
+			<string>\b(unroll|loop|fastopt|allow_uav_condition)\b</string>
+			<key>name</key>
+			<string>keyword.control.hlsl</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(abs|ceil|clamp|cross|degrees|determinant|distance|dot|floor|length|lerp|log|log10|log2|max|min|mul|normalize|pow|radians|reflect|refract|rsqrt|saturate|sin|sincos|sqrt|tan|transpose)\b</string>
+			<key>name</key>
+			<string>entity.name.function</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
