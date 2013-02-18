@@ -140,8 +140,8 @@
 		{ "trigger": "transpose", "contents": "transpose($1)" },
 		{ "trigger": "trunc", "contents": "trunc($1)" },
 		
-		{ "trigger": "LightAttenuation", "contents": "LightAttenuation[${2:index}]" },
-		{ "trigger": "Wrap", "contents": "Wrap[${2:index}]" },
+		{ "trigger": "LightAttenuation", "contents": "LightAttenuation[${1:index}]" },
+		{ "trigger": "Wrap", "contents": "Wrap[${1:index}]" },
 
 		"AB_BLENDFACTOR",
 		"AB_SAMPLEMASK",
