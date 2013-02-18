@@ -99,6 +99,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>Semantics</string>
+			<key>match</key>
+			<string>\b(BINORMAL[0-9]*|BLENDINDICES[0-9]*|BLENDWEIGHT[0-9]*|COLOR[0-9]*|NORMAL[0-9]*|POSITION[0-9]*|POSITIONT|PSIZE[0-9]*|TANGENT[0-9]*|TEXCOORD[0-9]*|Output|FOG|PSIZE|TESSFACTOR[0-9]*|VFACE|VPOS|DEPTH[0-9]*)\b</string>
+			<key>name</key>
+			<string>entity.name.tag.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>State variables</string>
 			<key>match</key>
 			<string>\b(?i:(AB_BLENDFACTOR|AB_SAMPLEMASK|AddressU|AddressV|AddressW|AlphaBlendEnable|AlphaFunc|AlphaRef|AlphaTestEnable|AlphaToCoverageEnable|Ambient|AmbientMaterialSource|AntialiasedLineEnable|BackStencilFail|BackStencilFunc|BackStencilPass|BackStencilZFail|BlendEnable|BlendOp|BlendOpAlpha|BlendState|BorderColor|Clipping|ClipPlaneEnable|ColorVertex|ColorWriteEnable|ComparisonFunc|CullMode|DepthBias|DepthBiasClamp|DepthEnable|DepthFunc|DepthStencilState|DepthWriteMask|DestBlend|DestBlendAlpha|DiffuseMaterialSource|DitherEnable|DS_STENCILREF|EmissiveMaterialSource|FillMode|Filter|FogColor|FogDensity|FogEnable|FogEnd|FogStart|FogTableMode|FogVertexMode|FrontCounterClockwise|FrontStencilFail|FrontStencilFunc|FrontStencilPass|FrontStencilZFail|GeometryShader|IndexedVertexBlendEnable|LastPixel|LightAmbient|LightAttenuation[0-2]|LightDiffuse|LightDirection|LightEnable|LightFalloff|Lighting|LightPhi|LightPosition|LightRange|LightSpecular|LightTheta|LightType|LocalViewer|MagFilter|MaterialAmbient|MaterialDiffuse|MaterialEmissive|MaterialPower|MaterialSpecular|MaxAnisotropy|MaxLOD|MaxMipLevel|MinFilter|MinLOD|MipFilter|MipLODBias|MipMapLodBias|MultiSampleAntialias|MultisampleEnable|MultiSampleMask|NormalizeNormals|PatchSegments|PixelShader|PointScale|PointScaleEnable|PointSize|PointSpriteEnable|RangeFogEnable|RasterizerState|RenderTargetWriteMask|ScissorEnable|ShadeMode|SlopeScaledDepthBias|SlopeScaleDepthBias|SpecularEnable|SpecularMaterialSource|SrcBlend|SrcBlendAlpha|SRGBTexture|StencilEnable|StencilFail|StencilFunc|StencilMask|StencilPass|StencilReadMask|StencilRef|StencilWriteMask|StencilZFail|TextureFactor|TweenFactor|VertexBlend|VertexShader|Wrap([0-9]|1[0-5])|ZClipEnable))\b</string>
