@@ -18,12 +18,6 @@
 			<string>constant.numeric.hlsl</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b(true|false)\b</string>
-			<key>name</key>
-			<string>constant.language.hlsl</string>
-		</dict>
-		<dict>
 			<key>comment</key>
 			<string>General flow control keywords</string>
 			<key>match</key>
@@ -67,7 +61,7 @@
 			<key>comment</key>
 			<string>Shader types</string>
 			<key>match</key>
-			<string>\b(pass|technique|technique10|SetVertexShader|SetGeometryShader|SetPixelShader|CompileShader)\b</string>
+			<string>\b(pass|technique|technique10|SetVertexShader|SetGeometryShader|SetPixelShader|CompileShader|ShaderFunction|SetDepthStencilState|SetRasterizerState|SetBlendState)\b</string>
 			<key>name</key>
 			<string>storage.type.hlsl</string>
 		</dict>
@@ -89,33 +83,9 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Storage modifierss</string>
+			<string>Storage, type, function argument and struct interpolation modifiers</string>
 			<key>match</key>
-			<string>\b(extern|precise|shared|groupshared|packoffset|register|snorm|static|uniform|unorm|volatile)\b</string>
-			<key>name</key>
-			<string>storage.modifier.hlsl</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Type modifiers</string>
-			<key>match</key>
-			<string>\b(const|row_major|column_major)\b</string>
-			<key>name</key>
-			<string>storage.modifier.hlsl</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Function parameter modifiers</string>
-			<key>match</key>
-			<string>\b(in|inout|out)\b</string>
-			<key>name</key>
-			<string>storage.modifier.hlsl</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Shader Model 4 struct interpolation modifierss</string>
-			<key>match</key>
-			<string>\b(centroid|linear|nointerpolation|noperspective|sample)\b</string>
+			<string>\b(inline|(extern|precise|shared|groupshared|packoffset|register|snorm|static|uniform|unorm|volatile)|(const|row_major|column_major)|(in|inout|out)|(centroid|linear|nointerpolation|noperspective|sample))\b</string>
 			<key>name</key>
 			<string>storage.modifier.hlsl</string>
 		</dict>
@@ -125,15 +95,23 @@
 			<key>match</key>
 			<string>\b(abort|abs|acos|all|AllMemoryBarrier|AllMemoryBarrierWithGroupSync|any|asdouble|asfloat|asin|asint|asuint|asuint|atan|atan2|ceil|clamp|clip|cos|cosh|countbits|cross|D3DCOLORtoUBYTE4|ddx|ddx_coarse|ddx_fine|ddy|ddy_coarse|ddy_fine|degrees|determinant|DeviceMemoryBarrier|DeviceMemoryBarrierWithGroupSync|distance|dot|dst|errorf|EvaluateAttributeAtCentroid|EvaluateAttributeAtSample|EvaluateAttributeSnapped|exp|exp2|f16tof32|f32tof16|faceforward|firstbithigh|firstbitlow|floor|fma|fmod|frac|frexp|fwidth|GetRenderTargetSampleCount|GetRenderTargetSamplePosition|GroupMemoryBarrier|GroupMemoryBarrierWithGroupSync|InterlockedAdd|InterlockedAnd|InterlockedCompareExchange|InterlockedCompareStore|InterlockedExchange|InterlockedMax|InterlockedMin|InterlockedOr|InterlockedXor|isfinite|isinf|isnan|ldexp|length|lerp|lit|log|log10|log2|mad|max|min|modf|msad4|mul|noise|normalize|pow|printf|Process2DQuadTessFactorsAvg|Process2DQuadTessFactorsMax|Process2DQuadTessFactorsMin|ProcessIsolineTessFactors|ProcessQuadTessFactorsAvg|ProcessQuadTessFactorsMax|ProcessQuadTessFactorsMin|ProcessTriTessFactorsAvg|ProcessTriTessFactorsMax|ProcessTriTessFactorsMin|radians|rcp|reflect|refract|reversebits|round|rsqrt|saturate|sign|sin|sincos|sinh|smoothstep|sqrt|step|tan|tanh|tex1D|tex1D|tex1Dbias|tex1Dgrad|tex1Dlod|tex1Dproj|tex2D|tex2D|tex2Dbias|tex2Dgrad|tex2Dlod|tex2Dproj|tex3D|tex3D|tex3Dbias|tex3Dgrad|tex3Dlod|tex3Dproj|texCUBE|texCUBE|texCUBEbias|texCUBEgrad|texCUBElod|texCUBEproj|transpose|trunc)\b</string>
 			<key>name</key>
-			<string>support.function</string>
+			<string>support.function.hlsl</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Effect states</string>
+			<string>State variables</string>
 			<key>match</key>
-			<string>\b(?i:(RasterizerState|DepthStencilState|BlendState|VertexShader|PixelShader|GeometryShader|BlendEnable|SrcBlend|DestBlend|BlendOp|SrcBlendAlpha|DestBlendAlpha|BlendOpAlpha|RenderTargetWriteMask|AlphaToCoverageEnable|IndependentBlendEnable|DepthEnable|DepthWriteMask|DepthFunc|StencilEnable|StencilReadMask|StencilWriteMask|FrontStencilFail|FrontStencilZFail|FrontStencilPass|FrontStencilFunc|BackStencilFail|BackStencilZFail|BackStencilPass|BackStencilFunc|FillMode|CullMode|FrontCounterClockwise|DepthBias|DepthBiasClamp|SlopeScaledDepthBias|DepthClipEnable|ScissorEnable|MultisampleEnable|AntialiasedLineEnable|Filter|AddressU|AddressV|AddressW|MipLODBias|MaxAnisotropy|ComparisonFunc|BorderColor|MinLOD|MaxLOD))\b</string>
+			<string>\b(?i:(AB_BLENDFACTOR|AB_SAMPLEMASK|AddressU|AddressV|AddressW|AlphaBlendEnable|AlphaFunc|AlphaRef|AlphaTestEnable|AlphaToCoverageEnable|Ambient|AmbientMaterialSource|AntialiasedLineEnable|BackStencilFail|BackStencilFunc|BackStencilPass|BackStencilZFail|BlendEnable|BlendOp|BlendOpAlpha|BlendState|BorderColor|Clipping|ClipPlaneEnable|ColorVertex|ColorWriteEnable|ComparisonFunc|CullMode|DepthBias|DepthBiasClamp|DepthEnable|DepthFunc|DepthStencilState|DepthWriteMask|DestBlend|DestBlendAlpha|DiffuseMaterialSource|DitherEnable|DS_STENCILREF|EmissiveMaterialSource|FillMode|Filter|FogColor|FogDensity|FogEnable|FogEnd|FogStart|FogTableMode|FogVertexMode|FrontCounterClockwise|FrontStencilFail|FrontStencilFunc|FrontStencilPass|FrontStencilZFail|GeometryShader|IndexedVertexBlendEnable|LastPixel|LightAmbient|LightAttenuation[0-2]|LightDiffuse|LightDirection|LightEnable|LightFalloff|Lighting|LightPhi|LightPosition|LightRange|LightSpecular|LightTheta|LightType|LocalViewer|MagFilter|MaterialAmbient|MaterialDiffuse|MaterialEmissive|MaterialPower|MaterialSpecular|MaxAnisotropy|MaxLOD|MaxMipLevel|MinFilter|MinLOD|MipFilter|MipLODBias|MipMapLodBias|MultiSampleAntialias|MultisampleEnable|MultiSampleMask|NormalizeNormals|PatchSegments|PixelShader|PointScale|PointScaleEnable|PointSize|PointSpriteEnable|RangeFogEnable|RasterizerState|RenderTargetWriteMask|ScissorEnable|ShadeMode|SlopeScaledDepthBias|SlopeScaleDepthBias|SpecularEnable|SpecularMaterialSource|SrcBlend|SrcBlendAlpha|SRGBTexture|StencilEnable|StencilFail|StencilFunc|StencilMask|StencilPass|StencilReadMask|StencilRef|StencilWriteMask|StencilZFail|TextureFactor|TweenFactor|VertexBlend|VertexShader|Wrap([0-9]|1[0-5])|ZClipEnable))\b</string>
 			<key>name</key>
-			<string>support.other.variable</string>
+			<string>support.constant.hlsl</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Language constants</string>
+			<key>match</key>
+			<string>\b(?i:(0WEIGHTS|1WEIGHTS|2WEIGHTS|3WEIGHTS|ADD|ALWAYS|ANISOTROPIC|BLENDFACTOR|BORDER|BOTHINVSRCALPHA|BOTHSRCALPHA|CCW|CLAMP|COLOR1|COLOR2|CONVOLUTIONMONO|CW|DECR|DECRSAT|DESTALPHA|DESTCOLOR|DIRECTIONAL|DISABLE|EQUAL|EXP|EXP2|FALSE|FLAT|GAUSSIANQUAD|GOURAUD|GREATER|GREATEREQUAL|INCR|INCRSAT|INVBLENDFACTOR|INVDESTALPHA|INVDESTCOLOR|INVERT|INVSRCALPHA|INVSRCCOLOR|INVSRCCOLOR2|KEEP|LESS|LESSEQUAL|LINEAR|MATERIAL|MAX|MIN|MIRROR|MIRRORONCE|NEVER|NONE|NOTEQUAL|NULL|ONE|PHONG|POINT|PYRAMIDALQUAD|REPLACE|REVSUBTRACT|SOLID|SPOT|SRCALPHA|SRCALPHASAT|SRCCOLOR|SRCCOLOR2|SUBTRACT|TRUE|TWEENING|TWOSIDED|USEW|WIREFRAME|WRAP|ZERO))\b</string>
+			<key>name</key>
+			<string>constant.language.hlsl</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -141,15 +119,15 @@
 			<key>match</key>
 			<string>\b(ps_1_[1-4]|vs_1_1|(ps|vs)_2_([0ab]|sw)|x?[pv]s_3_0|[gpv]s_4_[01]|[cpgv]s_(4_0|4_1|5_0)|ds_5_0)\b</string>
 			<key>name</key>
-			<string>support.type</string>
+			<string>support.type.hlsl</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>Keywords imported by C that do not exist in HLSL</string>
 			<key>match</key>
-			<string>\b(_Bool|_Complex|_Imaginary|inline|restrict)\b</string>
+			<string>\b(_Bool|_Complex|_Imaginary|restrict)\b</string>
 			<key>name</key>
-			<string>invalid.illegal.hlsl</string>
+			<string>source.hlsl</string>
 		</dict>
 		<dict>
 			<key>comment</key>
