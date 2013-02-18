@@ -21,7 +21,7 @@
 			<key>comment</key>
 			<string>General flow control keywords</string>
 			<key>match</key>
-			<string>\b(break|case|compile|continue|default|discard|do|else|for|goto|if|return|switch|while)\b</string>
+			<string>\b(break|case|continue|default|discard|do|else|for|goto|if|return|switch|while)\b</string>
 			<key>name</key>
 			<string>keyword.control.hlsl</string>
 		</dict>
@@ -61,7 +61,7 @@
 			<key>comment</key>
 			<string>Shader types</string>
 			<key>match</key>
-			<string>\b(pass|technique|technique10|SetVertexShader|SetGeometryShader|SetPixelShader|CompileShader|ShaderFunction|SetDepthStencilState|SetRasterizerState|SetBlendState)\b</string>
+			<string>\b(pass|technique|technique10|compile|SetVertexShader|SetGeometryShader|SetPixelShader|CompileShader|ShaderFunction|SetDepthStencilState|SetRasterizerState|SetBlendState)\b</string>
 			<key>name</key>
 			<string>storage.type.hlsl</string>
 		</dict>
