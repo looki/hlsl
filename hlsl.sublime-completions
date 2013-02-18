@@ -3,8 +3,6 @@
 
 	"completions":
 	[
-		"hlsl",
-
 		{ "trigger": "abort", "contents": "abort($1)" },
 		{ "trigger": "abs", "contents": "abs($1)" },
 		{ "trigger": "acos", "contents": "acos($1)" },
